@@ -1,2 +1,11 @@
 title: FPGA para brasileiros
 description: 
+jekyll-archives:
+  enabled: []
+  layout: default
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
