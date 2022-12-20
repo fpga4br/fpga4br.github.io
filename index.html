@@ -2,24 +2,21 @@
 layout: default
 ---
 <section class="container">
-<div class="level-item">
-<div class="columns is-multiline is-centered cards-container" id="sectioncontainer">
-    <div class="column is-narrow">
-        <article class="message is-black">
-            <div class="message-header">
-                <p>Season 1</p>
-                <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">
-              {% for post in site.posts %}
-                <div class="board-item">
-                  <div class="board-item-content"> <a href="{{ post.url }}">{{ post.title }}</a> /div>
-                 
-                </div>
-              {% endfor %}
-            </div>
-        </article>
-    </div>
-</div>
+    
+<div class="columns">
+           {% for tag in site.tags %}
+        <div class="column">
+                  <h3>{{ tag[0] }}</h3>
+                  <ul>
+                    {% for post in tag[1] %}
+                      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                  </ul>
+        </div>
+        {% endfor %}
+  
+    First column
+  
+    
 </div>
 </section>
