@@ -1,12 +1,16 @@
 ---
 layout: default
 --- 
-<div id="archives">
-  {% for category in site.categories %}
-    <div class="archive-group">
+</div>
+
+<nav class="level">
+  
+    {% for category in site.categories %}
+    <div class="level-item has-text-centered">
+      <div>
       {% capture category_name %}{{ category | first }}{% endcapture %}
-      <div id="#{{ category_name | slugize }}"></div>
-      <h3 class="category-head">{{ category_name }}</h3>
+      <p class="heading" id="#{{ category_name | slugize }}"></p>
+      <p class="title">{{ category_name }}</p>
       <a name="{{ category_name | slugize }}"></a>
       {% for post in site.categories[category_name] %}
       <article class="archive-item">
@@ -16,6 +20,7 @@ layout: default
       </article>
       {% endfor %}
     </div>
+  </div>
   {% endfor %}
-</div>
 
+</nav>
