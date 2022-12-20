@@ -6,7 +6,7 @@ layout: default
   <div class="columns">
     <div class="column is-3 has-background-info-light">
       <ul>
-{% for category in site.categories %}
+{% for category in site.categories offset:1 %}
 <li class="has-text-centered">
 <div>
 {% capture category_name %}{{ category | first }}{% endcapture %}
