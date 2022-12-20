@@ -20,7 +20,7 @@ layout: default
 {% for category in site.categories offset:1 %}
  {% capture category_name %}{{ category | first }}{% endcapture %}
 <div class="panel-block">
-<span class="heading is-uppercase has-text-weight-semibold">{{ category_name }}</span>
+  <a class="heading is-uppercase has-text-weight-semibold" href="{{ site.baseurl }}{{ category.url }}">{{ category_name }}</a>
 </div>
 
 {% for post in site.categories[category_name] %}
