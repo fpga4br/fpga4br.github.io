@@ -20,16 +20,20 @@ layout: default
     </p>
   </div>
 {% for category in site.categories offset:1 %}
+ {% capture category_name %}{{ category | first }}{% endcapture %}
 <div class="panel-block">
-{% capture category_name %}{{ category | first }}{% endcapture %}
 <p class="heading is-uppercase ">{{ category_name }}</p>
+</div>
+
 {% for post in site.categories[category_name] %}
+        <div class="panel-block ml-2">
   <a href="{{ site.baseurl }}{{ post.url }}">
       <span class="panel-icon">
       <i class="fas fa-book" aria-hidden="true"></i>
     </span>
    {{post.title}}</a>
 </a>
+        </div>
 {% endfor %}
 </div>
 {% endfor %}
