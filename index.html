@@ -6,7 +6,7 @@ layout: default
 
 <div class="container mt-6">
   <div class="columns">
-    <div class="column is-3 has-background-info-light">
+    <div class="column is-3">
       <nav class="panel">
   <p class="panel-heading">
     Navegação
@@ -20,19 +20,18 @@ layout: default
     </p>
   </div>
 {% for category in site.categories offset:1 %}
-<a class="panel-block">
+<div class="panel-block">
 {% capture category_name %}{{ category | first }}{% endcapture %}
-<p class="heading is-uppercase">{{ category_name }}</p>
+<p class="heading is-uppercase ">{{ category_name }}</p>
 {% for post in site.categories[category_name] %}
- <p class="ml-1 has-text-weight-medium">
-
-       <span class="panel-icon">
+  <a href="{{ site.baseurl }}{{ post.url }}">
+      <span class="panel-icon">
       <i class="fas fa-book" aria-hidden="true"></i>
     </span>
-   <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-</p>
-{% endfor %}
+   {{post.title}}</a>
 </a>
+{% endfor %}
+</div>
 {% endfor %}
   </div>
 </nav>
