@@ -2,24 +2,40 @@
 layout: default
 --- 
 
+
+
 <div class="container mt-6">
   <div class="columns">
     <div class="column is-3 has-background-info-light">
-      <ul>
+      <nav class="panel">
+  <p class="panel-heading">
+    Navegação
+  </p>
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input" type="text" placeholder="Search">
+      <span class="icon is-left">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </span>
+    </p>
+  </div>
 {% for category in site.categories offset:1 %}
-<li class="level-item">
-<div>
+<a class="panel-block">
 {% capture category_name %}{{ category | first }}{% endcapture %}
 <p class="heading is-uppercase">{{ category_name }}</p>
 {% for post in site.categories[category_name] %}
-<p class="ml-1 has-text-weight-medium">
-<a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+ <p class="ml-1 has-text-weight-medium">
+
+       <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+   <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
 </p>
 {% endfor %}
-</div>
-</li>
+</a>
 {% endfor %}
-      </ul>
+  </div>
+</nav>
   </div>
   <div class="column">
   </div>
