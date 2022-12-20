@@ -1,26 +1,31 @@
 ---
 layout: default
 --- 
+
+<div class="container">
+  <div class="columns">
+    <div class="column is-3 has-background-info-light">
+      <ul>
+{% for category in site.categories %}
+<li class="has-text-centered">
+<div>
+{% capture category_name %}{{ category | first }}{% endcapture %}
+<p class="heading" id="#{{ category_name | slugize }}"></p>
+<p class="title">{{ category_name }}</p>
+<a name="{{ category_name | slugize }}"></a>
+{% for post in site.categories[category_name] %}
+<article class="archive-item">
+<h4>
+<a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
+</h4>
+</article>
+{% endfor %}
 </div>
-
-<nav class="level">
-  
-    {% for category in site.categories %}
-    <div class="level-item has-text-centered">
-      <div>
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <p class="heading" id="#{{ category_name | slugize }}"></p>
-      <p class="title">{{ category_name }}</p>
-      <a name="{{ category_name | slugize }}"></a>
-      {% for post in site.categories[category_name] %}
-      <article class="archive-item">
-        <h4>
-            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-        </h4>
-      </article>
-      {% endfor %}
-    </div>
+</li>
+{% endfor %}
+      </ul>
   </div>
-  {% endfor %}
-
-</nav>
+  <div class="column">
+  </div>
+ </div>
+</div>
