@@ -7,8 +7,8 @@ layout: default
 <div class="container mt-6">
   <div class="columns">
     <div class="column is-3">
-      <nav class="panel">        
-          <p class="panel-heading"><span class="panel-icon"><i class="fas fa-bars" aria-hidden="true"></i></span> Navegação</p>
+      <nav class="panel is-shadowless">        
+          <p class="panel-heading"><span class="panel-icon"><i class="fas fa-bars" aria-hidden="true"></i></span></p>
           <div class="panel-block">
             <p class="control has-icons-left">
               <input class="input" type="text" placeholder="Search">
@@ -20,7 +20,7 @@ layout: default
 {% for category in site.categories offset:1 %}
  {% capture category_name %}{{ category | first }}{% endcapture %}
 <div class="panel-block">
-  <a class="heading is-uppercase has-text-weight-bold" href="{{ site.baseurl }}{{ category.url }}">{{ category_name }}</a>
+  <a class="has-text-black-ter heading is-uppercase has-text-weight-bold" href="{{ site.baseurl }}{{ site.categories[category_name].url }}">{{ category_name }}</a>
 </div>
 
 {% for post in site.categories[category_name] %}
