@@ -34,3 +34,11 @@ layout: default
   <div class="column"></div>
  </div>
 </div>
+
+{% if page.type == "post" %}
+{% include post.html %}
+{% elsif page.class == "contact" %}
+{% include contact.html %}
+{% else %}
+{{ content }}
+{% endif %}

@@ -3,6 +3,11 @@ layout: default
 ---
 <div class="content">
 
+  {% if post.featuredimg%}
+  <figure class="image is-128x128">
+    <img src={{ post.featuredimg }}>
+  </figure>
+  {% endif %}
   <header class="">
     <p class="title">{{ page.title }}</p>
   </header>
