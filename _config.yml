@@ -1,6 +1,12 @@
 title: FPGA para brasileiros
 description: FPGA para brasileiros
 source: posts 
+site.url: https://fpga4br.github.io
+defaults:
+  - scope:
+      path: "assets/imgs"
+    values:
+      image: true
 jekyll-archives:
   enabled: []
   layout: default
