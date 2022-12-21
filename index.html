@@ -39,8 +39,7 @@ layout: default
               {% for tag in post.tags %}
               <small class="heading is-italic" >{{ tag }}</small>
               {% endif %}
-            </a>
-            
+            </a>            
             <br>
             {{ post.content | strip_html | truncatewords:20 }}
           </p>
