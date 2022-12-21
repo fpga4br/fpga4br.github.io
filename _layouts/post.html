@@ -4,9 +4,14 @@ layout: default
 <div class="content">
 
   {% if page.featuredimg %}
-  <figure class="image is-128x128">
-    <img src={{ page.featuredimg }}>
-  </figure>
+  <div class="columns">
+    <div class="column is-3">
+      <figure class="image is-128x128">
+        <img src={{ page.featuredimg }}>
+      </figure>
+    </div>
+  </div>
+
   {% endif %}
   <header class="">
     <p class="title">{{ page.title }}</p>
