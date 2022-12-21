@@ -4,24 +4,22 @@ layout: default
 <div class="container mt-6">
   <div class="columns">
     <div class="column is-3">
-      <nav class="panel">        
-          <p class="panel-heading"><span class="panel-icon"><i class="fas fa-bars"></i></span></p>
-          <div class="panel-block">
-
-          </div>
+      <aside class="menu">
 {% for category in site.categories offset:1 %}
  {% capture category_name %}{{ category | first }}{% endcapture %}
-<div class="panel-block">
+<p class="menu-label">
   <a class="has-text-black-ter heading is-uppercase has-text-weight-bold" href="{{ site.baseurl }}{{ site.categories[category_name].url }}">{{ category_name }}</a>
-</div>
+</p>
+<ul class="menu-list">
+  {% for post in site.categories[category_name] %}
+  <li class="">
+     <a class="" href="{{ site.baseurl }}{{ post.url }}"> {{post.title}}</a>
+  </li>
+{% endfor %}
+</ul>
 
-{% for post in site.categories[category_name] %}
-  <div class="panel-block ml-2">
-     <a class="heading is-uppercase " href="{{ site.baseurl }}{{ post.url }}"> {{post.title}}</a>
-  </div>
 {% endfor %}
-{% endfor %}
-      </nav>
+</aside>
     </div>
 
   <div class="column">
